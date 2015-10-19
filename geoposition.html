@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <script src="ol.js" type="text/javascript"></script>
+      <title>Geolocation mit OpenLayers</title>
+   </head>
+   <body>
+      <h1>Wo geht's hier raus?</h1>
+      <p class="artikel" id="ausgabe">Das fragte sich mancher am letzten Marktsonntag in Niebelding. ...</p>
+      <!-- eingefügte Buttons für spätere Aktionen -->
+      <button id="eins" onClick="ausgabe()">Position ausgeben</button>
+      <button id="zwei" onClick="karte_anzeigen()">Karte anzeigen</button>
+      <button id="drei" onClick="karte_auf_position_zentrieren()">Karte auf Position zentrieren</button>
+      <button id="vier" onClick="position_auf_karte_anzeigen()">Position auf der Karte anzeigen</button>
+      <button id="fuenf" onClick="alles()">Alles auf einmal!</button>
+      <button id="sechs" onClick="resetMap()">Nochmals von vorne.</button>
+      <!-- der Platzhalter für die Karte -->
+      <div id="map" style="height: 400px; width: 600px;border:1px solid #aaa;margin-top:11px;"></div>
+      <!-- ein Bild zum Anzeigen der Position -->
+      <img id="geolocation_marker" src="point.png" />
+      <script type="text/javascript">   </script>
+   </body>
+</html>
