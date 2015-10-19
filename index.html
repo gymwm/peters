@@ -7,6 +7,23 @@
       <!-- Es folgen die zusätzlichen Styleangaben für das Dokument -->
    </head>
    <body>
+      <script type="text/javascript">
+   var a = 1;                    // Zuweisung einer Zahl zum Variablennamen a
+   alert( a );                   // Kontrollausgabe als Alert - kleines Popup
+   console.log( a );             // Kontrollausgabe auf der Konsole: identisch mit Alert (*)
+
+   var b = "test";
+   alert( b );
+   console.log( b );             // Kontrollausgabe auf der Konsole: identisch mit Alert (**)
+
+   var c = {id: 'Kubo', 
+            werbistdu: function(){return this.id;}
+           };
+   alert( c );                   // Kontrollausgabe mit Alert: nichtssagend
+   console.log( c );             // Kontrollausgabe auf der Konsole mit allen Details (***)
+   console.log( c.id );
+   console.log( c.werbistdu() );
+</script>
       <h1>Big Brother is watching you! ;)</h1>
       <p class="artikel">html5 rocks</p>
       <button class="artikel" id="eins">Klick mich.</button> 
