@@ -9,7 +9,7 @@
       <h1>Wo geht's hier raus?</h1>
       <p class="artikel" id="ausgabe">Das fragte sich mancher am letzten Marktsonntag in Niebelding. ...</p>
       <!-- eingefügte Buttons für spätere Aktionen -->
-      <button id="eins" onClick="ausgabe()">Position ausgeben</button>
+      <button id="eins" onClick="position_ausgeben()">Position ausgeben</button>
       <button id="zwei" onClick="karte_anzeigen()">Karte anzeigen</button>
       <button id="drei" onClick="karte_auf_position_zentrieren()">Karte auf Position zentrieren</button>
       <button id="vier" onClick="position_auf_karte_anzeigen()">Position auf der Karte anzeigen</button>
@@ -26,6 +26,18 @@
    // console.log( strAusgabe );
    document.getElementById('ausgabe').innerHTML = strAusgabe; // (*)
    }  
+   function position_ausgeben(){
+   // HTML5-Fähigkeit des Browsers abrufen
+   navigator.geolocation.getCurrentPosition( function (position){                 //(*)
+      // position ist ein Objekt, mit dem untergeordneten Objekt coords.
+      // coords enthält als Attribute Longitude und Latitude.
+      var posAusgabe = "Sie sind hier: ( Long "
+                        + position.coords.longitude 
+                        +" | Lat "
+                        + position.coords.latitude + " )";
+      ausgabe(posAusgabe);
+      });                                                                         //(**)
+   }
    </script>
    </body>
 </html>
