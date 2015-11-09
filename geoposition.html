@@ -38,6 +38,23 @@
          ausgabe(posAusgabe);
          });                                                                         //(**)
       }
+      function karte_anzeigen(){
+   // Instanzierung eines neuen Map-Objekts aus dem Framework OpenLayer3
+   map = new ol.Map({                // Parameter: Objekt mit Optionen (*)
+                                     // Option 1: Layers (Schichten)
+      layers: [new ol.layer.Tile({   // Einbinden einer OSM-Karte
+                               source: new ol.source.MapQuest({layer: 'osm'})
+                                })],
+                                     // Option 2: View (Ansicht)
+      view: new ol.View({            // Definition einer Ansicht der Karte
+                       center: [0,0], // Positionsangabe für die Mitte
+                       zoom: 2       // Zoomstufe, 0 - 28 
+                       }), 
+      target: 'map'                  // Option 3: Zielelement
+                                     // ID des HTML-Elements, 
+                                     //   in dem die Karte gezeigt werden soll
+      });
+   }
       </script>
       </body>
    </html>
