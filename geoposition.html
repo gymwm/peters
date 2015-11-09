@@ -55,6 +55,30 @@
                                      //   in dem die Karte gezeigt werden soll
       });
    }
+   function karte_auf_position_zentrieren(){ 
+
+   navigator.geolocation.getCurrentPosition( function (position){
+				
+   // Daten der Geoposition
+   geoPosition = [position.coords.longitude, position.coords.latitude];
+				
+   // Projektion der Geoposition auf die Karte
+   positionAufKarte = ol.proj.transform(
+                                        geoPosition, 
+                                        'EPSG:4326', 
+                                        'EPSG:3857'
+                                        );
+								
+   // Definition einer Kartenansicht
+   var view = 	new ol.View({
+                            center: positionAufKarte, // aktuelle Position
+                            zoom: 12                  // geeigneter Zoom
+			    });
+								
+   // Aktualisierung der Kartenansicht
+   map.setView( view ); 
+   }); 
+}
       </script>
       </body>
    </html>
